@@ -1,0 +1,8 @@
+{
+  "cSpell.words": [
+    "wdio"
+  ],
+  "cucumberautocomplete.steps": [
+    "test/steps/**/*.js"
+  ]
+}

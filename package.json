@@ -1,0 +1,36 @@
+{
+  "name": "webdriverIO",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Aliaksei Bakhur",
+  "license": "ISC",
+  "devDependencies": {
+    "@wdio/cli": "^5.11.2",
+    "@wdio/cucumber-framework": "^5.11.3",
+    "@wdio/mocha-framework": "^5.11.0",
+    "@wdio/spec-reporter": "^5.11.0",
+    "@wdio/sync": "^5.11.0",
+    "chromedriver": "^75.1.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.0",
+    "grunt": "^1.0.4",
+    "grunt-continue": "^0.1.0",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-eslint": "^22.0.0",
+    "grunt-exec": "^3.0.0",
+    "grunt-webdriver": "^3.0.0",
+    "wdio-chromedriver-service": "^5.0.2"
+  },
+  "dependencies": {
+    "@wdio/local-runner": "^5.11.2",
+    "chai": "^4.2.0",
+    "cucumber": "^5.1.0",
+    "winston": "^3.2.1"
+  }
+}
