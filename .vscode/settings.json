@@ -1,6 +1,9 @@
 {
   "cSpell.words": [
-    "wdio"
+    "browserstack",
+    "chromedriver",
+    "wdio",
+    "webdriverio"
   ],
   "cucumberautocomplete.steps": [
     "test/steps/**/*.js"

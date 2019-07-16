@@ -10,6 +10,10 @@
   "author": "Aliaksei Bakhur",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
+    "@babel/register": "^7.4.4",
     "@wdio/cli": "^5.11.2",
     "@wdio/cucumber-framework": "^5.11.3",
     "@wdio/mocha-framework": "^5.11.0",
@@ -25,7 +29,8 @@
     "grunt-eslint": "^22.0.0",
     "grunt-exec": "^3.0.0",
     "grunt-webdriver": "^3.0.0",
-    "wdio-chromedriver-service": "^5.0.2"
+    "wdio-chromedriver-service": "^5.0.2",
+    "webdriverio": "^5.11.2"
   },
   "dependencies": {
     "@wdio/local-runner": "^5.11.2",
