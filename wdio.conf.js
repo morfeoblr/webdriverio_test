@@ -131,6 +131,7 @@ exports.config = {
   // framework: 'mocha',
   framework: 'cucumber',
   cucumberOpts: {
+    requireModule: ['@babel/register'],
     require: ['./test/steps/**/*.js'], // <string[]> (file/dir) require files before executing features
     backtrace: false, // <boolean> show full backtrace for errors
     // compiler: [
@@ -284,51 +285,51 @@ exports.config = {
   // };=
 
   // Cucumber specific hooks
-  beforeFeature: (feature) => {
-    process.send({
-      event: 'feature:start',
-      name: feature.name,
-    });
-  },
+  // beforeFeature: (feature) => {
+  //   process.send({
+  //     event: 'feature:start',
+  //     name: feature.name,
+  //   });
+  // },
 
-  beforeScenario: (scenario) => {
-    browser.windowHandleMaximize();
-    process.send({
-      event: 'scenario:start',
-      name: scenario.name,
-    });
-    const featureNumber = scenario.feature.name.split(' ')[0];
-    const scenarioNumber = scenario.name.split(' ')[0];
-    browser.scenarioNumber = `${featureNumber}_${scenarioNumber}`;
-  },
+  // beforeScenario: (scenario) => {
+  //   browser.windowHandleMaximize();
+  //   process.send({
+  //     event: 'scenario:start',
+  //     name: scenario.name,
+  //   });
+  //   const featureNumber = scenario.feature.name.split(' ')[0];
+  //   const scenarioNumber = scenario.name.split(' ')[0];
+  //   browser.scenarioNumber = `${featureNumber}_${scenarioNumber}`;
+  // },
 
-  beforeStep: (step) => {
-    process.send({
-      event: 'step:start',
-      name: step.name,
-    });
-  },
+  // beforeStep: (step) => {
+  //   process.send({
+  //     event: 'step:start',
+  //     name: step.name,
+  //   });
+  // },
 
-  afterStep: (stepResult) => {
-    if (stepResult.status === 'failed') {
-      const dir = this.config.screenshotPath;
-      const fileName = path.join(dir, `${browser.scenarioNumber}.png`);
-      if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir);
-      }
-      console.error(fileName);
-      browser.saveScreenshot(fileName);
-    }
-    const logs = browser.log('browser').value
-      .map((log) => {
-        log.suiteAndStep = browser.scenarioNumber;
-        return log;
-      });
-    if (logs.length > 0) {
-      logger.error(logs);
-    }
-    process.send({
-      event: 'step:end',
-    });
-  },
+  // afterStep: (stepResult) => {
+  //   if (stepResult.status === 'failed') {
+  //     const dir = this.config.screenshotPath;
+  //     const fileName = path.join(dir, `${browser.scenarioNumber}.png`);
+  //     if (!fs.existsSync(dir)) {
+  //       fs.mkdirSync(dir);
+  //     }
+  //     console.error(fileName);
+  //     browser.saveScreenshot(fileName);
+  //   }
+  //   const logs = browser.log('browser').value
+  //     .map((log) => {
+  //       log.suiteAndStep = browser.scenarioNumber;
+  //       return log;
+  //     });
+  //   if (logs.length > 0) {
+  //     logger.error(logs);
+  //   }
+  //   process.send({
+  //     event: 'step:end',
+  //   });
+  // },
 };
